@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Калькулятор маржи</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Telegram Mini App</p>
+        <h1>Калькулятор маржи</h1>
+        <p class="subtitle">Расчеты перенесены из Excel-файлов: маркетплейс, срезка и доращивание корня.</p>
+      </div>
+      <button id="resetBtn" class="ghost">Сбросить</button>
+    </section>
+
+    <nav class="tabs" id="tabs"></nav>
+
+    <section class="layout">
+      <form id="inputForm" class="card inputs"></form>
+      <section class="card results">
+        <div class="card-head">
+          <h2 id="scenarioTitle">Итоги</h2>
+          <p id="scenarioNote"></p>
+        </div>
+        <div id="kpis" class="kpis"></div>
+        <div id="details"></div>
+      </section>
+    </section>
+  </main>
+
+  <template id="fieldTemplate">
+    <label class="field">
+      <span class="label"></span>
+      <input type="number" inputmode="decimal" step="any" />
+      <small></small>
+    </label>
+  </template>
+
+  <script src="/app.js"></script>
+</body>
+</html>
