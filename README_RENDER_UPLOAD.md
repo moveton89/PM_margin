@@ -34,3 +34,19 @@
 Для постоянной истории на Render лучше подключить Disk:
 - Mount Path: `/var/data`
 - Environment variable: `DATA_FILE=/var/data/calculations.json`
+
+## Админ-панель
+
+Адрес админки:
+
+```text
+https://ВАШ-СЕРВИС.onrender.com/admin.html
+```
+
+Добавьте переменную окружения:
+
+```env
+ADMIN_PASSWORD=ваш_пароль_для_админки
+```
+
+Если переменную не добавить, временный пароль будет `admin123`.
