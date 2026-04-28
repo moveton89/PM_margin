@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>PlantMarket</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero premium-card">
+      <div>
+        <p class="eyebrow" id="versionLabel">PlantMarket · версия 3.0 Premium</p>
+        <h1 id="appTitle">PlantMarket</h1>
+        <p class="subtitle" id="appSubtitle">Премиальный калькулятор прибыли для питомника.</p>
+        <div class="badges">
+          <span id="heroBadge">Green Agro Premium</span><span>PDF</span><span>История</span><span>PRO</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <button id="historyBtn" class="ghost">Мои расчеты</button>
+        <button id="resetBtn" class="ghost">Сбросить</button>
+      </div>
+    </section>
+
+    <section class="pro-strip">
+      <div><strong id="proTitle">PRO-доступ</strong><p id="proText">PDF-отчеты, история расчетов, заявки клиентов и расширенная аналитика.</p></div>
+      <button id="leadOpenBtn" class="primary small">Получить консультацию</button>
+    </section>
+
+    <nav class="tabs" id="tabs"></nav>
+
+    <section class="layout">
+      <form id="inputForm" class="card inputs"></form>
+      <section class="card results">
+        <div class="card-head">
+          <h2 id="scenarioTitle">Итоги</h2>
+          <p id="scenarioNote"></p>
+        </div>
+        <div id="kpis" class="kpis"></div>
+        <div class="actions-row">
+          <button id="saveCalcBtn" class="primary" type="button">Сохранить расчет</button>
+          <button id="pdfBtn" class="secondary" type="button">PDF отчет</button>
+          <span id="saveStatus" class="save-status"></span>
+        </div>
+        <div id="details"></div>
+      </section>
+    </section>
+
+    <section id="historyPanel" class="history-panel hidden">
+      <div class="history-backdrop" id="historyBackdrop"></div>
+      <div class="history-card">
+        <div class="history-head"><div><p class="eyebrow" id="historyVersionLabel">PlantMarket 3.0</p><h2 id="historyTitle">История расчетов</h2></div><button id="closeHistoryBtn" class="ghost">Закрыть</button></div>
+        <div id="historyList" class="history-list"></div>
+      </div>
+    </section>
+
+    <section id="leadPanel" class="history-panel hidden">
+      <div class="history-backdrop" id="leadBackdrop"></div>
+      <div class="lead-card">
+        <div class="history-head"><div><p class="eyebrow">PlantMarket PRO</p><h2>Заявка на консультацию</h2></div><button id="closeLeadBtn" class="ghost">Закрыть</button></div>
+        <label class="field"><span class="label">Телефон или Telegram</span><input id="leadPhone" placeholder="@username или +7..." /></label>
+        <label class="field"><span class="label">Комментарий</span><textarea id="leadComment" placeholder="Что хотите рассчитать или улучшить?"></textarea></label>
+        <button id="sendLeadBtn" class="primary" type="button">Отправить заявку</button>
+        <p id="leadStatus" class="save-status"></p>
+      </div>
+    </section>
+  </main>
+
+  <template id="fieldTemplate"><label class="field"><span class="label"></span><input type="number" inputmode="decimal" step="any" /><small></small></label></template>
+  <script src="/app.js"></script>
+</body>
+</html>
